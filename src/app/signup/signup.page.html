@@ -1,0 +1,68 @@
+<ion-content>
+  <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+    <ion-img [src]="'assets/arrow.png'" style="position: absolute; left: 20px; width: 20px;"></ion-img>
+    <ion-label style="color: #601D71; font-size: 22px;"><b>Sign Up</b></ion-label>
+  </div>
+  <div style="padding-left: 20px; padding-right: 20px; margin-top: 30px;">
+    <div>
+      <ion-label style="color: #4E5055; font-size: 14px">This is the email you will use to sign in. You won't be able to change this later.</ion-label>
+    </div>
+    <div style="margin-top: 50px;">
+      <ion-label style="color: #601D71; font-size: 14px;"><b>Full Name</b></ion-label>
+    </div>
+    <div>
+      <ion-input style="font-size: 16px; border-bottom: 1px solid #ccc; color: #5a5a5a" name="name" type="text" ngModel required></ion-input>
+    </div>
+    <div style="margin-top: 20px;">
+      <ion-label style="color: #601D71; font-size: 14px;"><b>Email</b></ion-label>
+    </div>
+    <div>
+      <ion-input style="font-size: 16px; border-bottom: 1px solid #ccc; color: #5a5a5a" name="email" type="email" ngModel required></ion-input>
+    </div>
+    <div style="margin-top: 20px;">
+      <ion-label style="color: #601D71; font-size: 14px;"><b>Company</b></ion-label>
+    </div>
+    <div>
+      <ion-input style="font-size: 16px; border-bottom: 1px solid #ccc; color: #5a5a5a" name="company" type="text" ngModel required></ion-input>
+    </div>
+    <div style="margin-top: 20px;">
+      <ion-label style="color: #601D71; font-size: 14px;"><b>Mobile Number</b></ion-label>
+    </div>
+    <div>
+      <form>
+        <ion-item>
+          <ion-intl-tel-input
+            id="phone-number"
+            name="phone-number"
+            [(ngModel)]="phoneNumber"
+            #phoneNumberControl="ngModel" >
+          </ion-intl-tel-input>
+        </ion-item>
+      </form>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+      <ion-label style="color: #601D71; font-size: 14px;"><b>Password</b></ion-label>
+      <a class="type-toggle" (click)="toggleShow()">
+        <ion-icon class="show-option" style="color: #601D71;" [hidden]="!showPassword" name="eye-off-outline"></ion-icon>
+        <ion-icon class="hide-option" style="color: #601D71;" [hidden]="showPassword" name="eye-outline"></ion-icon>
+      </a>
+    </div>
+    <div>
+      <a *ngIf="showPassword">
+        <ion-input style="font-size: 16px; border-bottom: 1px solid #ccc; color: #5a5a5a" name="password" type="text" [(ngModel)]="password"></ion-input>
+      </a>
+      <a *ngIf="!showPassword">
+        <ion-input style="font-size: 16px; border-bottom: 1px solid #ccc; color: #5a5a5a" name="password" type="password" [(ngModel)]="password"></ion-input>
+      </a>
+    </div>
+    <div style="margin-top: 20px;">
+      <ion-label style="color: #601D71; font-size: 14px;"><b>Confirm Password</b></ion-label>
+    </div>
+    <div>
+      <ion-input style="font-size: 16px; border-bottom: 1px solid #ccc; color: #5a5a5a" name="confirm" type="password" ngModel required></ion-input>
+    </div>
+  </div>
+  <div style="position: absolute; bottom: 20px; width: 100%; padding-left: 20px; padding-right: 20px;">
+    <ion-button expand="block" size="large" shape="round" style="font-size: 18px;"><b>Sign up</b></ion-button>
+  </div>
+</ion-content>
