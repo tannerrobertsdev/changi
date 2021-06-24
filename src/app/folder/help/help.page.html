@@ -1,9 +1,71 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>help</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
+  <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+    <ion-img [src]="'assets/arrow.png'" style="position: absolute; left: 20px; width: 20px;" (click)="onClickList(0)"></ion-img>
+    <ion-label style="color: #601D71; font-size: 22px;"><b>{{title}}</b></ion-label>
+  </div>
+  <div *ngIf="showList[0]" style="margin-top: 30px;">
+    <div style="background: darkgray; width: 100%; height: 1px;"></div>
+    <ion-list *ngFor="let menu of helpList; let i = index;">
+      <div *ngIf="i>0">
+        <div style="display: flex; justify-content: space-between; padding: 20px;" (click)="onClickList(i)">
+          <ion-label style="color: #601D71; font-size: 20px;"><b>{{menu}}</b></ion-label>
+          <ion-icon name="chevron-forward-outline" style="color: #601D71; font-size: x-large;"></ion-icon>
+        </div>
+        <div style="background: darkgray; width: 100%; height: 1px;"></div>
+      </div>
+    </ion-list>
+  </div>
+  <div *ngIf="showList[1]" style="padding-left: 20px; padding-right: 20px; margin-top: 30px;">
+    <ion-label style="color: #601D71;"><b>Getting Started</b></ion-label><br><br>
+    <ion-label style="color: #5a5a5a; line-height: 1.5;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</ion-label><br><br>
+    <ion-label style="color: #601D71;"><b>Managing Your Account</b></ion-label><br><br>
+    <ion-label style="color: #5a5a5a; line-height: 1.5;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</ion-label>
+  </div>
+  <div *ngIf="showList[2]" style="padding-left: 20px; padding-right: 20px; margin-top: 30px;">
+    <ion-label style="color: #601D71;"><b>What Should I do?</b></ion-label><br><br>
+    <ion-label style="color: #5a5a5a; line-height: 1.5;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</ion-label><br>
+    <ion-label style="color: #601D71;">Contact us:<b>+65 6338 4567</b></ion-label><br>
+    <ion-label style="color: #601D71;">Email:<b>helpsupport@cag.com</b></ion-label>
+  </div>
+  <div *ngIf="showList[3]" style="padding-left: 20px; padding-right: 20px; margin-top: 30px;">
+    <div>
+      <ion-label style="color: #601D71; font-size: 18px;"><b>Need help with something else?</b></ion-label>
+    </div>
+    <div style="margin-top: 30px;">
+      <ion-label style="color: #601D71; font-size: 14px;"><b>Full Name</b></ion-label>
+    </div>
+    <div>
+      <ion-input style="font-size: 16px; border-bottom: 1px solid #ccc; color: #5a5a5a" name="name" type="text" ngModel required></ion-input>
+    </div>
+    <div style="margin-top: 20px;">
+      <ion-label style="color: #601D71; font-size: 14px;"><b>Email</b></ion-label>
+    </div>
+    <div>
+      <ion-input style="font-size: 16px; border-bottom: 1px solid #ccc; color: #5a5a5a" name="email" type="email" ngModel required></ion-input>
+    </div>
+    <div style="margin-top: 20px;">
+      <ion-label style="color: #601D71; font-size: 14px;"><b>Subject</b></ion-label>
+    </div>
+    <div>
+      <ion-input style="font-size: 16px; border-bottom: 1px solid #ccc; color: #5a5a5a" name="subject" type="text" placeholder="Sign up different account" ngModel required></ion-input>
+    </div>
+    <div style="margin-top: 20px;">
+      <ion-label style="color: #601D71; font-size: 14px;"><b>Leave Your Message Here</b></ion-label>
+    </div>
+    <div style="margin-top: 8px;">
+      <ion-label style="color: #5A5A5A; font-size: 14px;">Send us your message and we will get back to you.</ion-label>
+    </div>
+    <div>
+      <ion-textarea style="border: 1px solid darkgray; border-radius: 15px; height: 200px; color: gray; padding: 20px;"></ion-textarea>
+    </div>
+    <div style="position: absolute; right: 20px; margin-top: 8px;">
+      <ion-label style="color: darkgray;">Word Limited to 5000 Characters</ion-label>
+    </div>
+    <div style="width: 100%; margin-top: 100px; margin-bottom: 20px;">
+      <ion-button expand="block" size="large" shape="round" style="font-size: 18px; --background: #601D71"><b>Submit</b></ion-button>
+    </div>
+  </div>
 </ion-content>
