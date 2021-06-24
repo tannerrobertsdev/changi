@@ -10,10 +10,10 @@ import { environment } from 'src/environments/environment';
 export class MapService {
 
   map: mapboxgl.Map;
-  style = 'mapbox://styles/mapbox/streets-v11';
-  lat = 45.899977;
-  lng = 6.172652;
-  zoom = 12;
+  style = 'mapbox://styles/mapbox/satellite-v9';
+  lat = 39.259036;
+  lng = -111.638097;
+  zoom = 18;
 
   constructor() {
     mapboxgl.accessToken = environment.mapbox.accessToken;

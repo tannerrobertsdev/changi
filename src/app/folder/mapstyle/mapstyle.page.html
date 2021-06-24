@@ -1,9 +1,36 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>mapstyle</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
+  <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+    <ion-img [src]="'assets/arrow.png'" style="position: absolute; left: 20px; width: 20px;"></ion-img>
+    <ion-label style="color: #601D71; font-size: 22px;"><b>Map Style</b></ion-label>
+  </div>
+  <div style="background-color: #e0e0e0; height: 50px; margin-top: 20px; display: flex; align-items: center;">
+    <ion-label style="color: #5A5A5A; font-size: 20px; margin-left: 20px;"><b>Labels and Borders</b></ion-label>
+  </div>
+  <div style="display: flex; justify-content: space-between; padding: 20px;">
+    <ion-label style="color: #5A5A5A;">Clean<br>No borders, labels, places and roads.</ion-label>
+    <ion-img src="assets/toggleon.png" style="width: 19px;"></ion-img>
+  </div>
+  <div style="background-color: darkgray; height: 1px; width: 100%;"></div>
+  <div style="display: flex; justify-content: space-between; padding: 20px;">
+    <ion-label style="color: #5A5A5A;">Exploration<br>Borders, labels, places, and roads.</ion-label>
+    <ion-img src="assets/toggleoff.png" style="width: 19px;"></ion-img>
+  </div>
+  <div style="background-color: darkgray; height: 1px; width: 100%;"></div>
+  <div style="display: flex; justify-content: space-between; padding: 20px;">
+    <ion-label style="color: #5A5A5A;">Everything<br>All borders, lables, places, roads, transit,<br>landmarks and water.</ion-label>
+    <ion-img src="assets/toggleoff.png" style="width: 19px;"></ion-img>
+  </div>
+  <div style="background-color: #e0e0e0; height: 50px; display: flex; align-items: center;">
+    <ion-label style="color: #5A5A5A; font-size: 20px; margin-left: 20px;"><b>Display Settings</b></ion-label>
+  </div>
+  <div style="display: flex; justify-content: space-between; padding: 20px;">
+    <ion-label style="color: #5A5A5A;">Turn on 3D buildings<br>Newer imagery may be available when<br>this is turned on.</ion-label>
+    <ion-toggle></ion-toggle>
+  </div>
+  <div style="background-color: darkgray; height: 1px; width: 100%;"></div>
+  <div style="display: flex; justify-content: space-between; padding: 20px;">
+    <ion-label style="color: #5A5A5A;">Turn on Gridlines<br>Show latitude/longitude lines.</ion-label>
+    <ion-toggle></ion-toggle>
+  </div>
+  <div style="background-color: darkgray; height: 1px; width: 100%;"></div>
 </ion-content>

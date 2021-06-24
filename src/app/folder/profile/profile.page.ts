@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePage implements OnInit {
 
+  phoneNumber = '';
+  password = '';
+  showPassword = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleShow() {
+    this.showPassword = !this.showPassword;
+  }
 }

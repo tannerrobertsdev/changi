@@ -1,7 +1,7 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <div style="display: flex; justify-content: center; align-items: center;">
-      <ion-buttons style="position: absolute; left: 20px;">
+      <ion-buttons style="position: absolute; left: 0px;">
         <ion-menu-button style="color: #601D71;"></ion-menu-button>
       </ion-buttons>
       <ion-title style="color: #601D71; position: absolute; transform: translate(-50%, -50%); left: 50%; top: 50%;"><b>100 CCTV</b></ion-title>
@@ -11,16 +11,49 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <!-- <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header> -->
-  <div>
-    <div id="map" class="map-container"></div>
-    <div>
-
+<ion-content>
+  <div style="display: flex; justify-content: center;">
+    <div id="map" class="map-container">
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button size="small" style="--background: white">
+          <ion-img src="assets/pencil.png"></ion-img>
+        </ion-fab-button>
+        <ion-fab-button size="small" style="--background: white">
+          <ion-img src="assets/mapstyle.png"></ion-img>
+        </ion-fab-button>
+        <ion-fab-button size="small" style="--background: white">
+          <ion-img src="assets/ruler.png"></ion-img>
+        </ion-fab-button>
+        <ion-fab-button size="small" style="--background: white">
+          <ion-img src="assets/locate.png"></ion-img>
+        </ion-fab-button>
+        <ion-fab-button size="small" style="--background: white">
+          <strong style="color: #601D71;">3D</strong>
+        </ion-fab-button>
+        <ion-fab-button size="small" style="--background: white">
+          <ion-img src="assets/direction.png"></ion-img>
+        </ion-fab-button>
+      </ion-fab>
+    </div>
+    <div class="bottom-pan">
+      <div class="bottom-menu">
+        <ion-list *ngFor="let m of bottomMenu; let i = index">
+          <div class="menu-button">
+            <ion-icon style="font-size: 24px;" [name]="m.icon+ '-outline'"></ion-icon>
+            <ion-label style="margin-top: 8px;">{{m.title}}</ion-label>
+          </div>
+        </ion-list>
+      </div>
+    </div>
+    <div class="vehicle-menu">
+      <ion-list *ngFor="let t of vehicleMenu; let i = index">
+        <div>
+          <ion-label style="color: #601D71; font-size: 18px;">{{t}}</ion-label>
+        </div>
+      </ion-list>
+    </div>
+    <div class="viewlist-menu">
+      <ion-label style="color: #601D71;">View by list</ion-label>
     </div>
   </div>
 </ion-content>
