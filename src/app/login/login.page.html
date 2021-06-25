@@ -2,34 +2,37 @@
   <div class="center" style="margin-top: 20px;">
     <ion-img [src]="'assets/logo.png'" style="width: 150px;"></ion-img>
   </div>
-  <div class="center" style="margin-top: 100px;">
-    <ion-label class="ion-text-wrap" style="color: #6B584A; font-size: 1.5rem;"><b>CHANGI EAST</b></ion-label>
-  </div>
   <div class="center">
-    <ion-label style="color: #6B584A; font-size: 1.2rem; letter-spacing: 2px;">Digital Twin</ion-label>
-  </div>
-  <div style="padding-left: 20px; padding-right: 20px; margin-top: 50px;">
     <div>
-      <ion-label style="color: #601D71; font-size: 14px;"><b>Username</b></ion-label>
+      <ion-label class="ion-text-wrap" style="color: #6B584A; font-size: 24px; font-family: Metropolis-Bold;">CHANGI EAST</ion-label>
+    </div>
+    <div>
+      <ion-label style="color: #6B584A; font-size: 16px; letter-spacing: 2px; font-family: Metropolis-Regular;">Digital Twin</ion-label>
+    </div>
+  </div>
+  <div style="padding-left: 20px; padding-right: 20px;">
+    <div>
+      <ion-label style="color: #601D71; font-size: 14px; font-family: Metropolis-SemiBold;">Username</ion-label>
     </div>
     <div>
       <ion-input style="font-size: 1.1rem; border-bottom: 1px solid #ccc; color: #5a5a5a" name="email" type="email" ngModel required></ion-input>
     </div>
     <div style="margin-top: 20px;">
-      <ion-label style="color: #601D71; font-size: 14px;"><b>Password</b></ion-label>
+      <ion-label style="color: #601D71; font-size: 14px; font-family: Metropolis-SemiBold;">Password</ion-label>
     </div>
     <div>
       <ion-input style="font-size: 1.1rem; border-bottom: 1px solid #ccc; color: #5a5a5a" name="password" type="password" ngModel required></ion-input>
     </div>
-    <div style="margin-top: 20px; margin-left: 20px; color: #5a5a5a;">
-      <ion-label>Forgot Username or Password?</ion-label>
+    <div style="margin-top: 20px; color: #5a5a5a;">
+      <ion-label style="font-size: 12px; font-family: Metropolis-Regular;">Forgot Username or Password?</ion-label>
     </div>
-    <div style="margin-top: 40px;">
-      <ion-button expand="block" size="large" shape="round" style="font-size: 18px;"><b>Login</b></ion-button>
+    <div style="margin-top: 50px;">
+      <ion-button expand="block" size="large" shape="round" style="font-size: 18px; font-family: Metropolis-Bold;">Login</ion-button>
     </div>
-  </div>
-  <div style="position: absolute; bottom: 0px;  left: 50%; transform: translate(-50%, 0px); margin-bottom: 20px;">
-    <ion-label style="font-size: 14px; color: #5a5a5a;">Don't have an account? Sign up</ion-label>
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 150px; margin-bottom: 20px;">
+      <ion-label style="font-size: 14px; color: #5a5a5a; font-family: Metropolis-Regular;">Don't have an account?</ion-label>
+      <ion-label style="font-size: 14px; font-family: Metropolis-SemiBold; color: #5a5a5a;">Sign up</ion-label>
+    </div>
   </div>
 
 </ion-content>

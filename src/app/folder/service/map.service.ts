@@ -13,7 +13,7 @@ export class MapService {
   style = 'mapbox://styles/mapbox/satellite-v9';
   lat = 39.259036;
   lng = -111.638097;
-  zoom = 18;
+  zoom = 15;
 
   constructor() {
     mapboxgl.accessToken = environment.mapbox.accessToken;

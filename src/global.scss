@@ -24,3 +24,23 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+  font-family: 'Metropolis-Regular';
+  src: url('../src/assets/font/Metropolis/Metropolis-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Metropolis-Bold';
+  src: url('../src/assets/font/Metropolis/Metropolis-Bold.otf');
+}
+
+@font-face {
+  font-family: 'Metropolis-SemiBold';
+  src: url('../src/assets/font/Metropolis/Metropolis-SemiBold.otf');
+}
+
+@font-face {
+  font-family: 'Metropolis-Medium';
+  src: url('../src/assets/font/Metropolis/Metropolis-Medium.otf');
+}

@@ -6,14 +6,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Profile', url: '/folder/profile', icon: 'person' },
-    { title: 'Notifications', url: '/folder/notifications', icon: 'notifications' },
-    { title: 'Map Style', url: '/folder/mapstyle', icon: 'cube' },
-    { title: 'Bookmark', url: '/folder/bookmark', icon: 'bookmarks' },
-    { title: 'Feedback', url: '/folder/feedback', icon: 'chatbox-ellipses' },
-    { title: 'About', url: '/folder/about', icon: 'information-circle' },
-    { title: 'Help Support', url: '/folder/help', icon: 'help-circle' },
-    { title: 'Sign Out', url: '/login', icon: 'log-out' }
+    { title: 'Profile', url: '/folder/profile', icon: 'profile.png' },
+    { title: 'Notifications', url: '/folder/notifications', icon: 'notification.png' },
+    { title: 'Map Style', url: '/folder/mapstyle', icon: 'mapstyle.png' },
+    { title: 'Bookmark', url: '/folder/bookmark', icon: 'bookmark.png' },
+    { title: 'Feedback', url: '/folder/feedback', icon: 'feedback.png' },
+    { title: 'About', url: '/folder/about', icon: 'about.png' },
+    { title: 'Help Support', url: '/folder/help', icon: 'help.png' },
+    { title: 'Sign Out', url: '/login', icon: 'signout.png' }
   ];
   constructor() {}
 }

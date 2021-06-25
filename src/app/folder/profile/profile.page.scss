@@ -2,7 +2,7 @@
   width: 75px;
   height: 75px;
   border-radius: 40px;
-  box-shadow: 0 0 20px rgb(0 0 0 / 30%);
+  box-shadow: 0 0 10px rgb(0 0 0 / 5%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,4 +26,12 @@
       }
     }
   }
+}
+
+ion-button {
+  --background: #601D71;
+}
+
+ion-label {
+  font-family: Metropolis-SemiBold !important;
 }

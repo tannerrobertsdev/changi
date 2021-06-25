@@ -1,49 +1,55 @@
 <ion-content>
   <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
     <ion-img [src]="'assets/arrow.png'" style="position: absolute; left: 20px; width: 20px;"></ion-img>
-    <ion-label style="color: #601D71; font-size: 22px;"><b>Feedback</b></ion-label>
+    <ion-label style="color: #601D71; font-size: 22px; font-family: Metropolis-Bold !important;">Feedback</ion-label>
   </div>
-  <div style="padding-left: 20px; padding-right: 20px; margin-top: 30px;">
+  <div style="padding-left: 20px; padding-right: 20px; margin-top: 40px;">
     <div>
-      <ion-label style="color: #601D71; font-size: 14px;"><b>Full Name</b></ion-label>
+      <ion-label style="color: #601D71; font-size: 14px;">Full Name</ion-label>
     </div>
     <div>
       <ion-input style="font-size: 16px; border-bottom: 1px solid #ccc; color: #5a5a5a" name="name" type="text" ngModel required></ion-input>
     </div>
     <div style="margin-top: 20px;">
-      <ion-label style="color: #601D71; font-size: 14px;"><b>Topic</b></ion-label>
+      <ion-label style="color: #601D71; font-size: 14px;">Topic</ion-label>
     </div>
     <div>
       <ion-input style="font-size: 16px; border-bottom: 1px solid #ccc; color: #5a5a5a" name="topic" type="text" ngModel required></ion-input>
     </div>
     <div style="margin-top: 20px;">
-      <ion-label style="color: #601D71; font-size: 14px;"><b>Location</b></ion-label>
+      <ion-label style="color: #601D71; font-size: 14px;">Location</ion-label>
     </div>
     <div>
-      <ion-select style="font-size: 16px; border-bottom: 1px solid #ccc; color: #5a5a5a" ngModel required></ion-select>
+      <ion-select class="select-full-width" interface="popover" style="font-size: 16px; border-bottom: 1px solid #ccc;" ngModel required>
+        <ion-select-option value="pk2">Package 2 (PK2)</ion-select-option>
+        <ion-select-option value="pk3">Package 3 (PK3)</ion-select-option>
+        <ion-select-option value="arc">Airside Road Connection (ARC)</ion-select-option>
+        <ion-select-option value="itbt">Inter-terminal Bored Tunnesl(ITBT)</ion-select-option>
+        <ion-select-option value="pk4">Package 4 (PK4)</ion-select-option>
+      </ion-select>
     </div>
-    <div style="margin-top: 20px;">
-      <ion-label style="color: #601D71; font-size: 14px;"><b>Leave Your Message Here</b></ion-label>
+    <div style="margin-top: 30px;">
+      <ion-label style="color: #601D71; font-size: 14px;">Leave Your Message Here</ion-label>
     </div>
     <div style="margin-top: 8px;">
-      <ion-label style="color: #5A5A5A; font-size: 14px;">Please provide an image or photo to support your message, if any.</ion-label>
+      <ion-label style="color: #5A5A5A; font-size: 14px; font-family: Metropolis-Regular !important;">Please provide an image or photo to support your message, if any.</ion-label>
     </div>
-    <div>
-      <ion-textarea style="border: 1px solid darkgray; border-radius: 15px; height: 200px; color: gray;"></ion-textarea>
+    <div style="margin-top: 8px;">
+      <ion-textarea style="border: 1px solid darkgray; border-radius: 15px; height: 200px; color: gray; padding: 10px;"></ion-textarea>
     </div>
     <div style="display: flex; justify-content: start; margin-top: 10px">
       <div class="attach-img">
-        <ion-icon name="camera-outline" size="large" style="color: #601D71;"></ion-icon>
+        <ion-img src="assets/icon/cam.png"></ion-img>
       </div>
       <div class="attach-img" style="margin-left: 10px;">
-        <ion-icon name="videocam-outline" size="large" style="color: #601D71;"></ion-icon>
+        <ion-img src="assets/icon/videocam.png"></ion-img>
       </div>
       <div style="position: absolute; right: 20px;">
-        <ion-label style="color: darkgray;">Word Limited to 5000 Characters</ion-label>
+        <ion-label style="color: darkgray; font-size: 11px; font-family: Metropolis-Medium;">Word Limited to 5000 Characters</ion-label>
       </div>
     </div>
-  </div>
-  <div style="position: absolute; bottom: 20px; width:100%; padding-left: 20px; padding-right: 20px;">
-    <ion-button expand="block" size="large" shape="round" style="font-size: 18px; --background: #601D71"><b>Submit</b></ion-button>
+    <div style="width:100%; padding-left: 20px; padding-right: 20px; margin-top: 50px; margin-bottom: 20px;">
+      <ion-button expand="block" size="large" shape="round" style="font-size: 18px; --background: #601D71"><b>Submit</b></ion-button>
+    </div>
   </div>
 </ion-content>

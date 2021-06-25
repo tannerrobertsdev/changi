@@ -2,11 +2,13 @@
   <ion-toolbar>
     <div style="display: flex; justify-content: center; align-items: center;">
       <ion-buttons style="position: absolute; left: 0px;">
-        <ion-menu-button style="color: #601D71;"></ion-menu-button>
+        <ion-menu-button>
+          <img src="assets/icon/menu.png">
+        </ion-menu-button>
       </ion-buttons>
-      <ion-title style="color: #601D71; position: absolute; transform: translate(-50%, -50%); left: 50%; top: 50%;"><b>100 CCTV</b></ion-title>
-      <ion-icon style="color: #601D71; position: absolute; font-size: x-large; right: 60px;" name="search"></ion-icon>
-      <ion-icon style="color: #601D71; position: absolute; font-size: x-large; right: 20px;" name="notifications"></ion-icon>
+      <ion-title style="color: #601D71; position: absolute; transform: translate(-50%, -50%); left: 50%; top: 50%; font-size: 22px; font-family: Metropolis-Bold !important;">Map</ion-title>
+      <ion-img src="assets/icon/search.png" style="position: absolute; right: 60px;"></ion-img>
+      <ion-img src="assets/icon/notification.png" style="position: absolute; right: 20px;"></ion-img>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -14,33 +16,46 @@
 <ion-content>
   <div style="display: flex; justify-content: center;">
     <div id="map" class="map-container">
-      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button size="small" style="--background: white">
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed" style="margin-bottom: 30px;">
+        <ion-fab-button size="small" style="--background: white; width: 34px; height: 34px;">
           <ion-img src="assets/pencil.png"></ion-img>
         </ion-fab-button>
-        <ion-fab-button size="small" style="--background: white">
+        <ion-fab-button size="small" style="--background: white; width: 34px; height: 34px;">
           <ion-img src="assets/mapstyle.png"></ion-img>
         </ion-fab-button>
-        <ion-fab-button size="small" style="--background: white">
+        <ion-fab-button size="small" style="--background: white; width: 34px; height: 34px;">
           <ion-img src="assets/ruler.png"></ion-img>
         </ion-fab-button>
-        <ion-fab-button size="small" style="--background: white">
+        <ion-fab-button size="small" style="--background: white; width: 34px; height: 34px;">
           <ion-img src="assets/locate.png"></ion-img>
         </ion-fab-button>
-        <ion-fab-button size="small" style="--background: white">
+        <ion-fab-button size="small" style="--background: white; width: 34px; height: 34px;">
           <strong style="color: #601D71;">3D</strong>
         </ion-fab-button>
-        <ion-fab-button size="small" style="--background: white">
+        <ion-fab-button size="small" style="--background: white; width: 34px; height: 34px;">
           <ion-img src="assets/direction.png"></ion-img>
         </ion-fab-button>
       </ion-fab>
+      <div style="position: absolute;">
+        <ion-img src="assets/mark/pk4.png" style="width: 50px; margin-top: 50px; margin-left: 200px;"></ion-img>
+        <ion-img src="assets/mark/itbt.png" style="width: 50px; margin-left: 100px;"></ion-img>
+        <ion-img src="assets/mark/arc.png" style="width: 50px; margin-left: 130px;"></ion-img>
+        <ion-img src="assets/mark/pk3.png" style="width: 50px; margin-top: 20px; margin-left: 135px;"></ion-img>
+        <ion-img src="assets/mark/pk2.png" style="width: 50px; margin-left: 30px;"></ion-img>
+      </div>
+      <div style="position: absolute; width: 100%; height: 30px; background-color: #000000A0; bottom: 0px; display: flex; justify-content: center; align-items: center;">
+        <ion-label style="font-size: 13px; font-family: Metropolis-Regular !important; color: white;">39’N 103053’24”E  6 Km</ion-label>
+      </div>
     </div>
     <div class="bottom-pan">
       <div class="bottom-menu">
-        <ion-list *ngFor="let m of bottomMenu; let i = index">
-          <div class="menu-button">
-            <ion-icon style="font-size: 24px;" [name]="m.icon+ '-outline'"></ion-icon>
-            <ion-label style="margin-top: 8px;">{{m.title}}</ion-label>
+        <ion-list *ngFor="let m of bottomMenu; let i = index" [ngStyle]="{ flex: i!==1?1:'none', background: 'transparent' }">
+          <div *ngIf="i===1" class="menu-button">
+            <div style="width: 1px; height: 45px; background-color: #D3D3D3"></div>
+          </div>
+          <div *ngIf="i!==1" class="menu-button">
+            <ion-img [src]="'assets/icon/'+m.icon" style="height: 18px;"></ion-img>
+            <ion-label style="margin-top: 8px; font-size: 12px; font-family: Metropolis-SemiBold !important;">{{m.title}}</ion-label>
           </div>
         </ion-list>
       </div>
@@ -48,7 +63,7 @@
     <div class="vehicle-menu">
       <ion-list *ngFor="let t of vehicleMenu; let i = index">
         <div>
-          <ion-label style="color: #601D71; font-size: 18px;">{{t}}</ion-label>
+          <ion-label style="color: #601D71; font-size: 15px; font-family: Metropolis-SemiBold !important;">{{t}}</ion-label>
         </div>
       </ion-list>
     </div>
