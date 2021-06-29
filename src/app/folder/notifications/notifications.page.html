@@ -50,4 +50,12 @@
       </div>
     </div>
   </ion-list>
+  <div class="calendar" [ngStyle]="{ display: clickedDateTime?'':'none'}">
+    <div class="cancel-btn" (click)="onClickDateTime()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15.707" height="15.707" viewBox="0 0 15.707 15.707">
+        <path id="Path_638" data-name="Path 638" d="M20,6.511,18.489,5,12.5,10.989,6.511,5,5,6.511,10.989,12.5,5,18.489,6.511,20,12.5,14.011,18.489,20,20,18.489,14.011,12.5Z" transform="translate(-4.646 -4.646)" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+      </svg>
+    </div>
+    <mbsc-datepicker style="width: 80%; position: absolute; top: 70px; left: 50%; transform: translate(-50%, 50px);" [controls]="['calendar', 'time']" display="inline"></mbsc-datepicker>
+  </div>
 </ion-content>

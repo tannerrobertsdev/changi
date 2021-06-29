@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { setOptions } from '@mobiscroll/angular';
+
+setOptions({
+  theme: 'ios',
+  themeVariant: 'light'
+});
 
 @Component({
   selector: 'app-notifications',
@@ -72,13 +78,15 @@ export class NotificationsPage implements OnInit {
     }
   ];
 
+  public clickedDateTime = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
   onClickDateTime() {
-
+    this.clickedDateTime = !this.clickedDateTime;
   }
 
   onClickFeedback() {

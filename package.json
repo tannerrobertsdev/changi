@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "~12.0.1",
     "@angular/router": "~12.0.1",
     "@ionic/angular": "^5.5.2",
+    "@mobiscroll/angular": "https://npm.mobiscroll.com/@mobiscroll/angular-trial/-/angular-trial-5.6.1.tgz",
     "flag-icon-css": "^3.5.0",
     "google-libphonenumber": "^3.2.21",
     "ion-intl-tel-input": "^1.0.5",
