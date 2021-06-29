@@ -44,3 +44,12 @@
   font-family: 'Metropolis-Medium';
   src: url('../src/assets/font/Metropolis/Metropolis-Medium.otf');
 }
+
+.popover-content.sc-ion-popover-ios, .popover-content.sc-ion-popover-md{
+  width: 100%;
+  left: 0 !important;
+}
+
+.sc-ion-select-popover.sc-ion-label-ios-h.sc-ion-label-ios-s.ios.hydrated {
+  font-size: 16px;
+}

@@ -21,12 +21,24 @@ export class FolderPage implements OnInit {
   ];
 
   public vehicleMenu = ['All', 'PK2', 'PK3', 'PK4', 'ARC', 'ITBT'];
+  public clickedVehicelIndex: number;
+  public clickedBottomIndex: number;
 
   constructor(private activatedRoute: ActivatedRoute,
     private map: MapService) { }
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
+    this.clickedVehicelIndex = 0;
+    this.clickedBottomIndex = 0;
     this.map.buildMap();
+  }
+
+  onClickVehicle(index: number) {
+    this.clickedVehicelIndex = index;
+  }
+
+  onClickBottomMenu(index: number) {
+    this.clickedBottomIndex = index;
   }
 }

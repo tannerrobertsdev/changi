@@ -5,15 +5,15 @@
     <ion-img src="assets/icon/notification.png" style="color: #601D71; position: absolute; font-size: x-large; right: 20px;"></ion-img>
   </div>
   <div style="display: flex; justify-content: space-between; padding-left: 20px; padding-right: 20px; margin-top: 20px;">
-    <div style="padding: 10px; box-shadow: 0 0 20px rgb(0 0 0 / 20%); border-radius: 20px; display: flex; justify-content: center; align-items: center;" (click)="onClickDateTime()">
+    <div style="padding: 10px; box-shadow: 0 0 6px rgb(0 0 0 / 16%); border-radius: 20px; display: flex; justify-content: center; align-items: center;" (click)="onClickDateTime()">
       <ion-img src="assets/calendar.png" style="width: 14px;"></ion-img>
       <ion-label style="color: #601D71; margin-left: 5px; font-size: 13px; font-family: Metropolis-Bold !important;">Date & Time</ion-label>
     </div>
-    <div style="padding: 10px; box-shadow: 0 0 20px rgb(0 0 0 / 20%); border-radius: 20px; display: flex; justify-content: center; align-items: center;" (click)="onClickFeedback()">
+    <div style="padding: 10px; box-shadow: 0 0 6px rgb(0 0 0 / 16%); border-radius: 20px; display: flex; justify-content: center; align-items: center;" (click)="onClickFeedback()">
       <ion-img src="assets/feed.png" style="width: 14px;"></ion-img>
       <ion-label style="color: #601D71; margin-left: 5px; font-size: 13px; font-family: Metropolis-Bold !important;">Feedback</ion-label>
     </div>
-    <div style="padding: 10px; box-shadow: 0 0 20px rgb(0 0 0 / 20%); border-radius: 20px; display: flex; justify-content: center; align-items: center;" (click)="onClickSearch()">
+    <div style="padding: 10px; box-shadow: 0 0 6px rgb(0 0 0 / 16%); border-radius: 20px; display: flex; justify-content: center; align-items: center;" (click)="onClickSearch()">
       <ion-img src="assets/notisearch.png" style="width: 15px;"></ion-img>
       <ion-label style="color: #601D71; margin-left: 5px; font-size: 13px; font-family: Metropolis-Bold !important;">Search</ion-label>
     </div>
@@ -39,13 +39,13 @@
           <ion-label style="color: white; font-size: 12px; font-family: Metropolis-Bold !important;"><b>{{data.type}}</b></ion-label>
         </div>
       </div>
-      <div style="margin-top: 20px; display: flex; justify-content: start; align-items: center;">
-        <ion-img src="assets/avatar.png" style="width: 38px;"></ion-img>
-        <ion-label style="margin-left: 20px; font-size: 20px; color: #5A5A5A; font-family: Metropolis-Bold !important;"><b>{{data.title}}</b></ion-label>
+      <div style="margin-top: 20px; display: flex; justify-content: start;">
+        <ion-img class="avatar-icon" src="assets/avatar.png" style="width: 38px;"></ion-img>
+        <ion-label style="margin-left: 20px; flex: 1; font-size: 20px; color: #5A5A5A; font-family: Metropolis-Bold !important;"><b>{{data.title}}</b></ion-label>
       </div>
-      <div *ngIf="data.images.length>0" style="display: flex; justify-content: space-between; margin-left: 50px;">
+      <div *ngIf="data.images.length>0" style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-gap: 4%; justify-content: space-between; margin-left: 50px;">
         <ion-list *ngFor="let img of data.images; let i = index;">
-          <ion-img [src]="'assets/notification/' + img.img" style="width: 100px;"></ion-img>
+          <ion-img [src]="'assets/notification/' + img.img"></ion-img>
         </ion-list>
       </div>
     </div>
