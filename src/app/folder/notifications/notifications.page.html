@@ -1,8 +1,16 @@
 <ion-content>
-  <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+  <div [ngStyle]="{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px', padding: clickedSearch?'0px 20px 0px 50px':''}">
     <ion-img [src]="'assets/arrow.png'" style="position: absolute; left: 20px; width: 20px;"></ion-img>
-    <ion-label style="color: #601D71; font-size: 22px; font-family: Metropolis-Bold !important;">Notifications</ion-label>
-    <ion-img src="assets/icon/notification.png" style="color: #601D71; position: absolute; font-size: x-large; right: 20px;"></ion-img>
+    <ng-container *ngIf="!clickedSearch">
+      <ion-label style="height: 38px; color: #601D71; font-size: 22px; font-family: Metropolis-Bold !important; display: flex; align-items: center;">Notifications</ion-label>
+      <svg style="position: absolute; right: 20px;" id="Component_32_1" data-name="Component 32 – 1" xmlns="http://www.w3.org/2000/svg" width="18.051" height="22" viewBox="0 0 18.051 22">
+        <path id="Path_532" data-name="Path 532" d="M13.026,24.5a2.263,2.263,0,0,0,2.256-2.256H10.769A2.263,2.263,0,0,0,13.026,24.5Zm6.769-6.769V12.09c0-3.464-1.839-6.363-5.077-7.13V4.192a1.692,1.692,0,0,0-3.385,0v.767c-3.227.767-5.077,3.655-5.077,7.13v5.641L4,19.987v1.128H22.051V19.987Zm-2.256,1.128H8.513V12.09c0-2.8,1.7-5.077,4.513-5.077s4.513,2.279,4.513,5.077Z" transform="translate(-4 -2.5)" fill="#601d71"/>
+      </svg>
+      <div class="notification">3</div>
+    </ng-container>
+    <ng-container *ngIf="clickedSearch">
+      <ion-input style="font-size: 18px; background-color: #F2F2F2; border-radius: 50px; font-family: Metropolis-SemiBold; --padding-start: 20px; --padding-end: 20px;" name="text" type="text" placeholder="Search" ngModel required></ion-input>
+    </ng-container>
   </div>
   <div style="display: flex; justify-content: space-between; padding-left: 20px; padding-right: 20px; margin-top: 20px;">
     <div style="padding: 10px; box-shadow: 0 0 6px rgb(0 0 0 / 16%); border-radius: 20px; display: flex; justify-content: center; align-items: center;" (click)="onClickDateTime()">
@@ -18,13 +26,13 @@
       <ion-label style="color: #601D71; margin-left: 5px; font-size: 13px; font-family: Metropolis-Bold !important;">Search</ion-label>
     </div>
   </div>
-  <div style="margin-top: 20px; width: 100%; background-color: darkgray; height: 1px;"></div>
+  <div style="margin-top: 20px; width: 100%; background-color: #D3D3D3; height: 1px;"></div>
   <div style="padding: 20px; display: flex; justify-content: space-between;">
-    <ion-label style="font-size: 16px; font-family: Metropolis-Bold !important;">Broadcast Lists</ion-label>
-    <ion-label style="font-size: 16px; font-family: Metropolis-Bold !important;">1  >  2189</ion-label>
+    <ion-label style="font-size: 16px; font-family: Metropolis-Bold !important; color: #363636;">Broadcast Lists</ion-label>
+    <ion-label style="font-size: 16px; font-family: Metropolis-Bold !important; color: #363636;">1  >  {{ notificationData.length }}</ion-label>
   </div>
-  <div style="width: 100%; background-color: darkgray; height: 1px;"></div>
-  <ion-list *ngFor="let data of notificationData; let i = index;" style="border-bottom: 1px solid darkgray;">
+  <div style="width: 100%; background-color: #D3D3D3; height: 1px;"></div>
+  <ion-list *ngFor="let data of notificationData; let i = index;" style="border-bottom: 1px solid #D3D3D3;">
     <div style="padding: 20px;">
       <div style="display: flex; justify-content: space-between;">
         <div>
@@ -39,23 +47,39 @@
           <ion-label style="color: white; font-size: 12px; font-family: Metropolis-Bold !important;"><b>{{data.type}}</b></ion-label>
         </div>
       </div>
-      <div style="margin-top: 20px; display: flex; justify-content: start;">
+      <div style="margin-top: 20px; display: flex; justify-content: start;" (click)="onClickTitle()">
         <ion-img class="avatar-icon" src="assets/avatar.png" style="width: 38px;"></ion-img>
         <ion-label style="margin-left: 20px; flex: 1; font-size: 20px; color: #5A5A5A; font-family: Metropolis-Bold !important;"><b>{{data.title}}</b></ion-label>
       </div>
       <div *ngIf="data.images.length>0" style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-gap: 4%; justify-content: space-between; margin-left: 50px;">
-        <ion-list *ngFor="let img of data.images; let i = index;">
-          <ion-img [src]="'assets/notification/' + img.img"></ion-img>
+        <ion-list *ngFor="let img of data.images; let j = index;">
+          <ion-img [src]="'assets/notification/' + img.img" (click)="onClickImage(j, img.img)"></ion-img>
         </ion-list>
       </div>
     </div>
   </ion-list>
-  <div class="calendar" [ngStyle]="{ display: clickedDateTime?'':'none'}">
+  <div class="popup-dialog" [ngStyle]="{ display: clickedDateTime?'':'none'}">
     <div class="cancel-btn" (click)="onClickDateTime()">
       <svg xmlns="http://www.w3.org/2000/svg" width="15.707" height="15.707" viewBox="0 0 15.707 15.707">
         <path id="Path_638" data-name="Path 638" d="M20,6.511,18.489,5,12.5,10.989,6.511,5,5,6.511,10.989,12.5,5,18.489,6.511,20,12.5,14.011,18.489,20,20,18.489,14.011,12.5Z" transform="translate(-4.646 -4.646)" fill="#fff" stroke="#fff" stroke-width="0.5"/>
       </svg>
     </div>
     <mbsc-datepicker style="width: 80%; position: absolute; top: 70px; left: 50%; transform: translate(-50%, 50px);" [controls]="['calendar', 'time']" display="inline"></mbsc-datepicker>
+  </div>
+  <div class="popup-dialog" [ngStyle]="{backgroundColor: '#000F', display: imageLink!==''?'flex':'none', justifyContent: 'center', alignItems: 'center'}">
+    <div style="position: absolute; top: 20px; width: 100%; padding-left: 10px;">
+      <ion-icon style="position:absolute; color: white; font-size: x-large;" name="close-outline" (click)="onClickClose()"></ion-icon>
+      <ion-label style="position:absolute; color: white; font-size: 16px; font-family: Metropolis-Bold !important; left: 50%; transform: translate(-50%, 0px); top:3px;">{{notificationData[notificationIndex].title}}</ion-label>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: flex-end;">
+      <ion-label style="color: white; font-size: 15px; font-family: Metropolis-Medium; margin-right: 20px;">{{notificationData[notificationIndex].date}}</ion-label>
+      <ion-img style="width: 100%; margin-top: 20px; margin-bottom: 20px;" [src]="'assets/notification/CCTV' + (notificationIndex+1) + '.png'"></ion-img>
+      <div style="width: 120px; height: 30px; margin-right: 20px; border-radius: 15px; border: 1px solid white; display: flex; justify-content: center; align-items: center;">
+        <svg id="Group_3255" data-name="Group 3255" xmlns="http://www.w3.org/2000/svg" width="13.554" height="13.554" viewBox="0 0 13.554 13.554">
+          <path id="Path_392" data-name="Path 392" d="M15.048,9.777v5.271H4.506V9.777H3v5.271a1.51,1.51,0,0,0,1.506,1.506H15.048a1.51,1.51,0,0,0,1.506-1.506V9.777Zm-4.518.5,1.95-1.943L13.542,9.4,9.777,13.166,6.012,9.4,7.074,8.339l1.95,1.943V3H10.53Z" transform="translate(-3 -3)" fill="#b7b7b7"/>
+        </svg>
+        <ion-label style="margin-left: 10px; font-size: 13px; font-family: Metropolis-Bold; color: #b7b7b7;">Save Image</ion-label>
+      </div>
+    </div>
   </div>
 </ion-content>

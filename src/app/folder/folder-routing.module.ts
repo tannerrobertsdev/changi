@@ -35,6 +35,14 @@ const routes: Routes = [
   {
     path: 'help',
     loadChildren: () => import('./help/help.module').then( m => m.HelpPageModule)
+  },
+  {
+    path: 'notifications-details',
+    loadChildren: () => import('./notifications-details/notifications-details.module').then( m => m.NotificationsDetailsPageModule)
+  },
+  {
+    path: 'ecm-detail',
+    loadChildren: () => import('./ecm-detail/ecm-detail.module').then( m => m.EcmDetailPageModule)
   }
 ];
 

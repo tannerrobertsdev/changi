@@ -1,0 +1,24 @@
+.notification {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 8px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-family: Metropolist-Medium !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 12px;
+  top: 10px;
+}
+
+.post-type {
+  width: 106px;
+  height: 25px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

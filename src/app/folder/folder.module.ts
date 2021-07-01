@@ -8,6 +8,10 @@ import { FolderPageRoutingModule } from './folder-routing.module';
 
 import { FolderPage } from './folder.page';
 
+import { MapComponent } from './map/map.component';
+import { CctvComponent } from './cctv/cctv.component';
+import { EcmComponent } from './ecm/ecm.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +19,11 @@ import { FolderPage } from './folder.page';
     IonicModule,
     FolderPageRoutingModule
   ],
-  declarations: [FolderPage]
+  declarations: [
+    FolderPage,
+    MapComponent,
+    CctvComponent,
+    EcmComponent
+  ]
 })
 export class FolderPageModule {}

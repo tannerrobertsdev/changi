@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { MapService } from './service/map.service';
-
 @Component({
   selector: 'app-folder',
   templateUrl: './folder.page.html',
@@ -21,24 +19,32 @@ export class FolderPage implements OnInit {
   ];
 
   public vehicleMenu = ['All', 'PK2', 'PK3', 'PK4', 'ARC', 'ITBT'];
-  public clickedVehicelIndex: number;
+  public clickedVehicleIndex: number;
   public clickedBottomIndex: number;
+  public clickedViewByList = false;
+  public title: string;
 
-  constructor(private activatedRoute: ActivatedRoute,
-    private map: MapService) { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
-    this.clickedVehicelIndex = 0;
+    this.clickedVehicleIndex = 0;
     this.clickedBottomIndex = 0;
-    this.map.buildMap();
+    this.title = this.bottomMenu[0].title;
   }
 
   onClickVehicle(index: number) {
-    this.clickedVehicelIndex = index;
+    this.clickedVehicleIndex = index;
   }
 
   onClickBottomMenu(index: number) {
     this.clickedBottomIndex = index;
+    this.clickedVehicleIndex = 0;
+    this.clickedViewByList = false;
+
+    this.title = this.bottomMenu[index + 1].title;
+    if (index === 0) {
+      this.title = 'Map';
+    }
   }
 }

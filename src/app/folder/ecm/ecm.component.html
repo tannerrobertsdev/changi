@@ -1,0 +1,42 @@
+<div>
+  <div style="display: flex; justify-content: space-between; padding: 0px 20px 20px 20px">
+    <div class="viewlist-menu" style="justify-content: center;">
+      <ion-label style="color: #601D71; font-size: 13px; font-family: Metropolis-Bold;">View by Map</ion-label>
+    </div>
+    <ion-label style="color: #601D71; font-size: 18px; font-family: Metropolis-Bold; display: flex; align-items: center;">50 CCTV</ion-label>
+  </div>
+  <ion-list *ngFor="let data of ecmData; let i = index;">
+    <ng-container *ngIf="clickIndex===0||(2*(clickIndex-1)===i||2*(clickIndex-1)+1===i)">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-top: 1px solid #D3D3D3;">
+        <ion-label style="color: #5A5A5A; font-size: 15px; font-family: Metropolis-Bold;">{{data.title}}</ion-label>
+        <ion-label style="color: #5A5A5A; font-size: 15px; font-family: Metropolis-Medium;">{{data.date}}</ion-label>
+      </div>
+      <div style="margin-top: 5px; position: relative;">
+        <ion-img [src]="'assets/ecm/' + data.img" style="width: 100%;"></ion-img>
+        <div [ngStyle]="{position: 'absolute', backgroundColor: data.color, left: '20px', top:'13px', display: 'flex', alignItems: 'center', borderRadius: '50px', padding: '5px'}">
+          <ion-label [ngStyle]="{color: data.color==='#fff'?'#601D71':'white', fontSize: '20px', fontFamily: 'Metropolis-Bold'}">{{data.unit}}</ion-label>
+        </div>
+        <div style="position: absolute; background-color: #0009; width: 100%; height: 100px; bottom: 0px; display: flex; align-items: center; padding: 20px;">
+          <ion-label style="white-space: pre-wrap; color: white; font-size: 16px; font-family: Metropolis-SemiBold;">{{data.address}}</ion-label>
+          <ion-fab-button size="small" style="--background: white; width: 34px; height: 34px; position: absolute; right: 5px;" (click)="onClickDetail()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18.55" height="18.55" viewBox="0 0 18.55 18.55">
+              <path id="Path_393" data-name="Path 393" d="M4,12.115H18.109L11.629,5.635,13.275,4l9.275,9.275L13.275,22.55,11.64,20.915l6.469-6.481H4Z" transform="translate(-4 -4)" fill="#601d71"/>
+            </svg>
+          </ion-fab-button>
+        </div>
+        <ion-fab-button size="small" style="position:absolute; --background: white; top: 5px; right: 5px; width: 34px; height: 34px;" (click)="clickedBookmark=true">
+          <ng-container *ngIf="!clickedBookmark">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16.33" height="19.959" viewBox="0 0 16.33 19.959">
+              <path id="Path_899" data-name="Path 899" d="M13.887,6.443V18.21l-3.819-1.642-.717-.308-.717.308L4.814,18.21V6.443h9.072M17.516,1H8.434A1.812,1.812,0,0,0,6.629,2.814H15.7a1.82,1.82,0,0,1,1.814,1.814V16.423l1.814.907V2.814A1.82,1.82,0,0,0,17.516,1ZM13.887,4.629H4.814A1.82,1.82,0,0,0,3,6.443V20.959l6.351-2.722L15.7,20.959V6.443A1.82,1.82,0,0,0,13.887,4.629Z" transform="translate(-3 -1)" fill="#601d71"/>
+            </svg>
+          </ng-container>
+          <ng-container *ngIf="clickedBookmark">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17.77" height="18.37" viewBox="0 0 17.77 18.37">
+              <path id="Path_945" data-name="Path 945" d="M17,11v6.97l-5-2.14L7,17.97V5h6V3H7A2.006,2.006,0,0,0,5,5V21l7-3,7,3V11Zm.83-2L15,6.17l1.41-1.41,1.41,1.41,3.54-3.54,1.41,1.41Z" transform="translate(-5 -2.63)" fill="#601d71"/>
+            </svg>
+          </ng-container>
+        </ion-fab-button>
+      </div>
+    </ng-container>
+  </ion-list>
+</div>

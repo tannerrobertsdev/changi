@@ -18,13 +18,15 @@
       <div *ngIf="showList[i]">
         <ion-list *ngFor="let d of t.data; let j = index">
           <div style="display: flex; justify-content: space-between; margin-top: 10px; padding-left: 20px; padding-right: 20px;">
-            <ion-label style="font-size: 15px; font-family: Metropolis-Bold !important;">{{d.cam}}</ion-label>
+            <ion-label style="color: #5A5A5A; font-size: 15px; font-family: Metropolis-Bold !important;">{{d.cam}}</ion-label>
             <ion-label style="color: #5A5A5A; font-size: 15px; font-family: Metropolis-Medium !important;">{{d.date}}</ion-label>
           </div>
           <div style="margin-top: 5px; position: relative;">
             <ion-img [src]="'assets/' + d.img" style="width: 100%;"></ion-img>
-            <ion-fab-button size="small" style="position:absolute; --background: white; top: 0px; right: 0px; width: 34px; height: 34px;">
-              <ion-img src="assets/bookmark1.png"></ion-img>
+            <ion-fab-button size="small" style="position:absolute; --background: white; top: 5px; right: 5px; width: 34px; height: 34px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17.77" height="18.37" viewBox="0 0 17.77 18.37">
+                <path id="Path_945" data-name="Path 945" d="M17,11v6.97l-5-2.14L7,17.97V5h6V3H7A2.006,2.006,0,0,0,5,5V21l7-3,7,3V11Zm.83-2L15,6.17l1.41-1.41,1.41,1.41,3.54-3.54,1.41,1.41Z" transform="translate(-5 -2.63)" fill="#601d71"/>
+              </svg>
             </ion-fab-button>
           </div>
         </ion-list>

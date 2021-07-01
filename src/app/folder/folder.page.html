@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar style="height: 52px; display: flex;">
+  <ion-toolbar style="height: 9vh; display: flex;">
     <div style="display: flex; justify-content: center; align-items: center;">
       <ion-buttons style="position: absolute; left: 20px;">
         <ion-menu-button>
@@ -8,7 +8,7 @@
           </svg>
         </ion-menu-button>
       </ion-buttons>
-      <ion-title class="title">Map</ion-title>
+      <ion-title class="title">{{title}}</ion-title>
       <svg style="position: absolute; right: 60px;" id="Group_1666" data-name="Group 1666" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
         <path id="Path_379" data-name="Path 379" d="M18.009,16.208H17.06l-.336-.324a7.816,7.816,0,1,0-.84.84l.324.336v.949l6,5.991L24,22.211Zm-7.2,0a5.4,5.4,0,1,1,5.4-5.4A5.4,5.4,0,0,1,10.8,16.208Z" transform="translate(-3 -3)" fill="#601d71"/>
       </svg>
@@ -21,63 +21,15 @@
 </ion-header>
 
 <ion-content>
-  <div style="display: flex; justify-content: center;">
-    <div id="map" class="map-container">
-      <ion-fab vertical="bottom" horizontal="end" slot="fixed" style="margin-bottom: 30px;">
-        <ion-fab-button size="small" style="--background: white; width: 34px; height: 34px;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18.003" height="18.003" viewBox="0 0 18.003 18.003">
-            <g id="Group_1648" data-name="Group 1648" transform="translate(-3 -2.997)">
-              <g id="Group_1645" data-name="Group 1645">
-                <g id="Group_1643" data-name="Group 1643">
-                  <path id="Path_383" data-name="Path 383" d="M3,21H6.75L17.81,9.94,14.06,6.19,3,17.25Zm2-2.92,9.06-9.06.92.92L5.92,19H5Z" fill="#601d71"/>
-                </g>
-                <g id="Group_1644" data-name="Group 1644">
-                  <path id="Path_384" data-name="Path 384" d="M18.37,3.29a1,1,0,0,0-1.41,0L15.13,5.12l3.75,3.75,1.83-1.83a1,1,0,0,0,0-1.41Z" fill="#601d71"/>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </ion-fab-button>
-        <ion-fab-button size="small" style="--background: white; width: 34px; height: 34px;">
-          <svg id="layers_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <path id="Path_403" data-name="Path 403" d="M0,0H24V24H0Z" fill="none"/>
-            <path id="Path_404" data-name="Path 404" d="M11.99,18.54,4.62,12.81,3,14.07l9,7,9-7L19.37,12.8ZM12,16l7.36-5.73L21,9,12,2,3,9l1.63,1.27ZM12,4.53,17.74,9,12,13.47,6.26,9,12,4.53Z" fill="#601d71"/>
-          </svg>
-        </ion-fab-button>
-        <ion-fab-button size="small" style="--background: white; width: 34px; height: 34px;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="12" viewBox="0 0 22 12">
-            <path id="Path_934" data-name="Path 934" d="M21,6H3A2.006,2.006,0,0,0,1,8v8a2.006,2.006,0,0,0,2,2H21a2.006,2.006,0,0,0,2-2V8A2.006,2.006,0,0,0,21,6Zm0,10H3V8H5v4H7V8H9v4h2V8h2v4h2V8h2v4h2V8h2Z" transform="translate(-1 -6)" fill="#601d71"/>
-          </svg>
-        </ion-fab-button>
-        <ion-fab-button size="small" style="--background: white; width: 34px; height: 34px;">
-          <svg id="pin_drop_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <path id="Path_387" data-name="Path 387" d="M0,0H24V24H0Z" fill="none"/>
-            <path id="Path_388" data-name="Path 388" d="M12,4a4.987,4.987,0,0,1,5,5.15c0,2.16-1.72,4.67-5,7.32C8.72,13.82,7,11.3,7,9.15A4.987,4.987,0,0,1,12,4m0-2A6.968,6.968,0,0,0,5,9.15Q5,13.83,12,19q7.005-5.16,7-9.85A6.968,6.968,0,0,0,12,2Z" fill="#601d71"/>
-            <path id="Path_389" data-name="Path 389" d="M12,7a2,2,0,1,0,2,2A2.006,2.006,0,0,0,12,7ZM5,20H19v2H5Z" fill="#601d71"/>
-          </svg>
-        </ion-fab-button>
-        <ion-fab-button size="small" style="--background: white; width: 34px; height: 34px;">
-          <strong style="color: #601D71; font-size: medium;">3D</strong>
-        </ion-fab-button>
-        <ion-fab-button size="small" style="--background: white; width: 34px; height: 34px;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="21.228" height="21.228" viewBox="0 0 21.228 21.228">
-            <g id="Group_1676" data-name="Group 1676" transform="translate(-3783.5 -329.5)">
-              <path id="Subtraction_2" data-name="Subtraction 2" d="M0,21.228H0L6.735,6.735,21.228,0,14.493,14.493,0,21.227ZM10.975,7.408a3.018,3.018,0,1,0,3.018,3.018A3.021,3.021,0,0,0,10.975,7.408Z" transform="translate(3783.5 329.5)" fill="#601d71" opacity="0.4"/>
-              <path id="Subtraction_1" data-name="Subtraction 1" d="M7.758,14.493h0L6.082,12.817A3.018,3.018,0,1,0,1.849,8.584L0,6.735,14.493,0,7.758,14.492Z" transform="translate(3790.235 329.5)" fill="#601d71"/>
-            </g>
-          </svg>
-        </ion-fab-button>
-      </ion-fab>
-      <div style="position: absolute; pointer-events: none; touch-action: none;">
-        <ion-img src="assets/mark/pk4.png" [ngStyle]="{opacity: clickedVehicelIndex===0||clickedVehicelIndex===3?'100':'0', width: '50px', marginTop: '50px', marginLeft: '200px'}"></ion-img>
-        <ion-img src="assets/mark/itbt.png" [ngStyle]="{opacity: clickedVehicelIndex===0||clickedVehicelIndex===5?'100':'0', width: '50px', marginLeft: '100px'}"></ion-img>
-        <ion-img src="assets/mark/arc.png" [ngStyle]="{opacity: clickedVehicelIndex===0||clickedVehicelIndex===4?'100':'0', width: '50px', marginLeft: '130px'}"></ion-img>
-        <ion-img src="assets/mark/pk3.png" [ngStyle]="{opacity: clickedVehicelIndex===0||clickedVehicelIndex===2?'100':'0', width: '50px', marginTop: '20px', marginLeft: '135px'}"></ion-img>
-        <ion-img src="assets/mark/pk2.png" [ngStyle]="{opacity: clickedVehicelIndex===0||clickedVehicelIndex===1?'100':'0', width: '50px', marginLeft: '30px'}"></ion-img>
-      </div>
-      <div style="position: absolute; width: 100%; height: 30px; background-color: #000000A0; bottom: 0px; display: flex; justify-content: center; align-items: center;">
-        <ion-label style="font-size: 13px; font-family: Metropolis-Regular !important; color: white;">39’N 103053’24”E  6 Km</ion-label>
-      </div>
+  <div style="display: flex;">
+    <div *ngIf="!clickedViewByList">
+      <app-map [clickIndex]="clickedVehicleIndex"></app-map>
+    </div>
+    <div *ngIf="clickedViewByList&&clickedBottomIndex===1" style="margin-top: 60px;">
+      <app-cctv [clickIndex]="clickedVehicleIndex"></app-cctv>
+    </div>
+    <div *ngIf="clickedViewByList&&clickedBottomIndex===2" style="margin-top: 60px">
+      <app-ecm [clickIndex]="clickedVehicleIndex"></app-ecm>
     </div>
     <div class="bottom-pan">
       <div class="bottom-menu">
@@ -121,13 +73,13 @@
     </div>
     <div class="vehicle-menu">
       <ion-list *ngFor="let t of vehicleMenu; let i = index" style="width: 40px; background: transparent;">
-        <div (click)="onClickVehicle(i)" class="select-vehicle" [ngStyle]="{ backgroundColor: clickedVehicelIndex===i?'#601D71':'white'}">
-          <ion-label [ngStyle]="{color: clickedVehicelIndex===i?'white':'#601D71', fontSize: '15px', fontFamily: 'Metropolis-SemiBold'}">{{t}}</ion-label>
+        <div (click)="onClickVehicle(i)" class="select-vehicle" [ngStyle]="{ backgroundColor: clickedVehicleIndex===i?'#601D71':'white'}">
+          <ion-label [ngStyle]="{color: clickedVehicleIndex===i?'white':'#601D71', fontSize: '15px', fontFamily: 'Metropolis-SemiBold'}">{{t}}</ion-label>
         </div>
       </ion-list>
     </div>
-    <!-- <div class="viewlist-menu">
-      <ion-label style="color: #601D71;">View by list</ion-label>
-    </div> -->
+    <div class="viewlist-menu" *ngIf="clickedBottomIndex>0&&!clickedViewByList" (click)="clickedViewByList=true">
+      <ion-label style="color: #601D71; font-size: 13px; font-family: Metropolis-Bold;">View by list</ion-label>
+    </div>
   </div>
 </ion-content>

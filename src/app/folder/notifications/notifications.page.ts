@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { setOptions } from '@mobiscroll/angular';
+import { Router } from '@angular/router';
 
 setOptions({
   theme: 'ios',
@@ -79,10 +80,16 @@ export class NotificationsPage implements OnInit {
   ];
 
   public clickedDateTime = false;
+  public imageLink = '';
+  public notificationIndex: number;
+  public clickedSearch = false;
 
-  constructor() { }
+  constructor(
+    public router: Router
+  ) { }
 
   ngOnInit() {
+    this.notificationIndex = 0;
   }
 
   onClickDateTime() {
@@ -94,6 +101,19 @@ export class NotificationsPage implements OnInit {
   }
 
   onClickSearch() {
+    this.clickedSearch = !this.clickedSearch;
+  }
 
+  onClickTitle() {
+    this.router.navigate(['/folder/notifications-details']);
+  }
+
+  onClickImage(index: number, image: string) {
+    this.notificationIndex = index;
+    this.imageLink = image;
+  }
+
+  onClickClose() {
+    this.imageLink = '';
   }
 }

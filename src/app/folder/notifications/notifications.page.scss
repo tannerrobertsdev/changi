@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.calendar {
+.popup-dialog {
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -26,4 +26,20 @@
   position: absolute;
   top: 50px;
   left: 10px;
+}
+
+.notification {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 8px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-family: Metropolist-Medium !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 12px;
+  top: 18px;
 }

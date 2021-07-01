@@ -1,0 +1,80 @@
+<ion-content>
+  <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+    <ion-img [src]="'assets/arrow.png'" style="position: absolute; left: 20px; width: 20px;"></ion-img>
+    <ion-label style="color: #601D71; font-size: 16px; font-family: Metropolis-Bold !important;">Josephine Ang Post</ion-label>
+    <svg style="position: absolute; right: 20px;" id="Component_32_1" data-name="Component 32 – 1" xmlns="http://www.w3.org/2000/svg" width="18.051" height="22" viewBox="0 0 18.051 22">
+      <path id="Path_532" data-name="Path 532" d="M13.026,24.5a2.263,2.263,0,0,0,2.256-2.256H10.769A2.263,2.263,0,0,0,13.026,24.5Zm6.769-6.769V12.09c0-3.464-1.839-6.363-5.077-7.13V4.192a1.692,1.692,0,0,0-3.385,0v.767c-3.227.767-5.077,3.655-5.077,7.13v5.641L4,19.987v1.128H22.051V19.987Zm-2.256,1.128H8.513V12.09c0-2.8,1.7-5.077,4.513-5.077s4.513,2.279,4.513,5.077Z" transform="translate(-4 -2.5)" fill="#601d71"/>
+    </svg>
+    <div class="notification">3</div>
+  </div>
+  <div style="position:absolute; right:20px; margin-Top: 20px; width: 83px; padding: 10px; box-shadow: 0 0 6px rgb(0 0 0 / 16%); border-radius: 20px; display: flex; justify-content: center; align-items: center;" (click)="onClickSearch()">
+    <ion-img src="assets/notisearch.png" style="width: 15px;"></ion-img>
+    <ion-label style="color: #601D71; margin-left: 5px; font-size: 13px; font-family: Metropolis-Bold !important;">Search</ion-label>
+  </div>
+  <div style="margin-top: 70px; padding: 20px; display: flex; justify-content: space-between; border-top: 1px solid #D3D3D3; border-bottom: 1px solid #D3D3D3;">
+    <ion-label style="font-size: 16px; font-family: Metropolis-Bold !important; color: #363636;">{{ commentsData.length }} comment</ion-label>
+    <ion-label style="font-size: 16px; font-family: Metropolis-Bold !important; color: #363636;">1  >  {{ notificationData.length }}</ion-label>
+  </div>
+  <ion-list *ngFor="let data of notificationData; let i = index;" style="border-bottom: 1px solid #D3D3D3;">
+    <div style="padding: 20px;">
+      <div style="display: flex; justify-content: space-between;">
+        <div>
+          <div>
+            <ion-label style="color: #363636; font-size: 14px; font-family: Metropolis-SemiBold !important;">Created by {{data.createby}}</ion-label>
+          </div>
+          <div>
+            <ion-label style="color: #363636; font-size: 14px; font-family: Metropolis-Regular !important;">{{data.date}}</ion-label>
+          </div>
+        </div>
+        <div class="post-type" [ngStyle]="{ backgroundColor: data.color }">
+          <ion-label style="color: white; font-size: 12px; font-family: Metropolis-Bold !important;"><b>{{data.type}}</b></ion-label>
+        </div>
+      </div>
+      <div style="margin-top: 20px; display: flex; justify-content: start;">
+        <ion-img class="avatar-icon" src="assets/avatar.png" style="width: 38px;"></ion-img>
+        <ion-label style="margin-left: 20px; flex: 1; font-size: 20px; color: #5A5A5A; font-family: Metropolis-Bold !important;"><b>{{data.title}}</b></ion-label>
+      </div>
+      <div style="margin-top: 30px;">
+        <ion-label style="white-space: pre-wrap; font-size: 16px; font-family: Metropolis-Medium;">{{ data.content }}</ion-label>
+      </div>
+      <div *ngIf="data.images.length>0" style="margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr 1fr; grid-gap: 4%; justify-content: space-between;">
+        <ion-list *ngFor="let img of data.images; let j = index;">
+          <ion-img [src]="'assets/notification/' + img.img"></ion-img>
+        </ion-list>
+      </div>
+    </div>
+  </ion-list>
+  <ion-list *ngFor="let comment of commentsData; let j = index;" style="border-bottom: 1px solid #D3D3D3;">
+    <div style="padding: 20px;">
+      <div style="display: flex; justify-content: start;">
+        <ion-img class="avatar-icon" src="assets/avatar.png" style="width: 38px;"></ion-img>
+        <div style="margin-left: 10px;">
+          <div>
+            <ion-label style="color: #5A5A5A; font-size: 14px; font-family: Metropolis-SemiBold !important;">{{comment.createby}}</ion-label>
+          </div>
+          <div>
+            <ion-label style="color: #5A5A5A; font-size: 14px; font-family: Metropolis-Medium !important;">{{comment.date}}</ion-label>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 30px;">
+        <ion-label style="white-space: pre-wrap; font-size: 16px; font-family: Metropolis-Medium;">{{ comment.content }}</ion-label>
+      </div>
+    </div>
+  </ion-list>
+  <div style="position: fixed; bottom: 0px; width: 100%; background-color: white; padding: 20px;">
+    <ion-input style="font-size: 18px; background-color: #F2F2F2; border-radius: 50px; font-family: Metropolis-SemiBold; --padding-start: 20px; --padding-end: 20px;" name="text" type="text" placeholder="Write a comment..." ngModel required></ion-input>
+    <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="21.041" height="18.937" viewBox="0 0 21.041 18.937">
+        <g id="Group_2818" data-name="Group 2818" transform="translate(-7.364 -8.416)">
+          <path id="Path_479" data-name="Path 479" d="M14.751,4.1l1.925,2.1h4.261V18.833H4.1V6.208H8.365L10.29,4.1h4.461M15.677,2H9.364L7.439,4.1H4.1A2.11,2.11,0,0,0,2,6.208V18.833a2.11,2.11,0,0,0,2.1,2.1H20.937a2.11,2.11,0,0,0,2.1-2.1V6.208a2.11,2.11,0,0,0-2.1-2.1H17.6ZM12.521,9.364a3.156,3.156,0,1,1-3.156,3.156,3.165,3.165,0,0,1,3.156-3.156m0-2.1a5.26,5.26,0,1,0,5.26,5.26A5.262,5.262,0,0,0,12.521,7.26Z" transform="translate(5.364 6.416)" fill="#601d71"/>
+        </g>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20.193" height="13.462" viewBox="0 0 20.193 13.462">
+        <path id="Path_951" data-name="Path 951" d="M16.462,8.244v8.975H5.244V8.244H16.462M17.584,6H4.122A1.125,1.125,0,0,0,3,7.122V18.34a1.125,1.125,0,0,0,1.122,1.122H17.584a1.125,1.125,0,0,0,1.122-1.122V14.414L23.193,18.9V6.561l-4.487,4.487V7.122A1.125,1.125,0,0,0,17.584,6Z" transform="translate(-3 -6)" fill="#601d71"/>
+      </svg>
+      <ion-label style="color: #ADACAC; font-size: 13px; font-family: Metropolis-Bold; border: 1px solid #ADACAC; border-radius: 50px; padding: 10px;">Send to Acknowledge</ion-label>
+      <ion-label style="color: #ADACAC; font-size: 13px; font-family: Metropolis-Bold; border: 1px solid #ADACAC; border-radius: 50px; padding: 10px;">Send to Close</ion-label>
+    </div>
+  </div>
+</ion-content>
