@@ -16,7 +16,7 @@ import { IonIntlTelInputModule } from 'ion-intl-tel-input';
   entryComponents: [],
   imports: [
     FormsModule,
-    MbscModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonIntlTelInputModule, MbscModule],
+    MbscModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonIntlTelInputModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
